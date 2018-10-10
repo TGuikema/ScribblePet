@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TGuikema; // Another way to call on the namespace.
 
 public class MyAwesomeSecondScript : MonoBehaviour {
 
@@ -13,6 +14,11 @@ public class MyAwesomeSecondScript : MonoBehaviour {
         mvfs.Showcase();
 	}
 	
+    public void Nope()
+    {
+
+    }
+
 	// Update is called once per frame
 	void Update () {
 		
