@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace TGuikema
-{
     
     public class MyVeryFirstScript : MonoBehaviour
     {
+        /*
         //[HideInInspector] // Hides the next line of code in the Inspector.
         //public int Strokes = 10;
         public MyButton P_Button; // Reference to an object with the script 'MyButton'.
         private void Reset() { P_Button = GetComponent<MyButton>(); }
 
-        /*
+        
          * Summary: Example.
         public int StrokeCat(int amount)
         {
@@ -29,7 +28,7 @@ namespace TGuikema
         {
             return Strokes;
         }
-        */
+        
 
         private void OnEnable()
         {
@@ -46,7 +45,7 @@ namespace TGuikema
 
 
 
-        public int MyInt = 5;
+        /public int MyInt = 5;
         public void Showcase()
         {
             int[] intArray = new int[2] { 0, 2 };
@@ -65,5 +64,6 @@ namespace TGuikema
         {
             Debug.Log("Hello " + name);
         }
+        */
     }
-}
+    

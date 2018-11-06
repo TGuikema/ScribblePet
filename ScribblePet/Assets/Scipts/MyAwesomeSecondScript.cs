@@ -5,6 +5,7 @@ using TGuikema; // Another way to call on the namespace.
 
 public class MyAwesomeSecondScript : MonoBehaviour {
 
+    /*
     public MyVeryFirstScript mvfs;
 
 	// Use this for initialization
@@ -23,4 +24,5 @@ public class MyAwesomeSecondScript : MonoBehaviour {
 	void Update () {
 		
 	}
+    */
 }
