@@ -12,25 +12,12 @@ public class TransferImage : MonoBehaviour {
 
     public GameObject ConfirmMessage;
 
-    private void Reset()
-    {
-        ImageToTransfer = GetComponent<Image>();
-    }
+    protected virtual void Reset() { ImageToTransfer = GetComponent<Image>(); }
+    protected virtual void Start() { }
+    protected virtual void OnEnable() { }
+    protected virtual void OnDisable() { }
 
-    private void Start()
-    { 
-        //TransferImageToOtherImage();
-    }
-    private void OnEnable()
-    {
-        
-    }
-    private void OnDisable()
-    {
-        
-    }
-
-    public void SolveButtonClick()
+    public virtual void SolveButtonClick()
     {
 
         ActivateConfirmMessages();
@@ -38,12 +25,15 @@ public class TransferImage : MonoBehaviour {
 
     }
 
-    private void ActivateConfirmMessages()
+    protected virtual void ActivateConfirmMessages()
     {
         ConfirmMessage.SetActive(true);
     }
 
-    private void TransferImageToOtherImage()
+    public Vector3 NewSize = new Vector3(0.2f, 0.2f, 0.2f);
+    public Vector3 Offset = new Vector3(0, 0, 0);
+
+    protected virtual void TransferImageToOtherImage()
     {
         /*if (ImageToTransfer.sprite == ImageMonster.sprite)
         {
@@ -52,10 +42,10 @@ public class TransferImage : MonoBehaviour {
             return;
         }*/
         ImageMonster.sprite = ImageToTransfer.sprite;
+        ImageMonster.SetNativeSize();
+        ImageMonster.rectTransform.localScale = NewSize;
+        ImageMonster.rectTransform.localPosition = Offset;
         ImageMonster.enabled = true;
    
     }
-
-
-
 }
