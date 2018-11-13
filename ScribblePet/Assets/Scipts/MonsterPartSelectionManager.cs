@@ -11,17 +11,19 @@ public class MonsterPartSelectionManager : MonoBehaviour {
 
     public void NextGRP()
     {
-
-        MonsterPartSelectionStages[index].SetActive(false);
-        index++;
-        MonsterPartSelectionStages[index].SetActive(true);
-
-        if (index > MonsterPartSelectionStages.Count)
+        MonsterPartSelectionStages[index].SetActive(false); //Set current MonsterPart to Innactive.
+        if (index >= MonsterPartSelectionStages.Count - 1)
         {
+            //Debug.Log("Does this only activate on max?");
             MonsterCompleted();
         }
-
+        else
+        {
+            MonsterPartSelectionStages[index + 1].SetActive(true);  //Set next MonsterPart to Active. 
+            index++;
+        }
     }
+
 
 
     public UnityEvent OnMonsterCompleted;
