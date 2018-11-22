@@ -8,10 +8,18 @@ public class CheckCollision : MonoBehaviour {
 	void Start () {
         
     }
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
+    public float DebugSpeed = 10;
+
 	void Update () {
-		
+        if (Input.GetKey(KeyCode.Space))
+            transform.Translate(-DebugSpeed, 0, 0);
+
+        if(Input.touchCount > 0)
+        {
+            transform.Translate(-DebugSpeed, 0, 0);
+        }
 	}
 
     bool isTriggered = false;
@@ -24,6 +32,10 @@ public class CheckCollision : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        Food collidedFoodProjection = collision.gameObject.GetComponent<Food>();
+   
+
+        collidedFoodProjection.GetCollected();
         Collision();
     }
 
@@ -32,48 +44,5 @@ public class CheckCollision : MonoBehaviour {
         isTriggered = true;
         Debug.Log("Collision detected.");
 
-        OnGUI();
     }
-
-    private void OnGUI()
-    {
-        if (isTriggered == true)
-        {
-            GUI.Label(new Rect(10, 10, 100, 20), "Collider Detected.");
-            return;
-        }
-    }
-
-
-    /* OTHER VERSION.(This does however not work completely right.)
-     * 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        Collision();
-    }
-
-    private void Collision()
-    {
-        isTriggered = true;
-        Debug.Log("Collision detected.");
-
-        Communicator();
-    }
-
-    private void Communicator()
-    {
-
-        if (isTriggered == true)
-        {
-            OnGUI();
-            return;
-        }
-
-    }
-
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 100, 20), "Collider Detected.");
-    }
-     */
 }
