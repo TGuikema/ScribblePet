@@ -7,13 +7,19 @@ public class CircularMovement : MonoBehaviour {
 	[SerializeField]
 	Transform rotationCenter;
 
-	[SerializeField]
+    [SerializeField]
 	float rotationRadius = 2f, angularSpeed = 2f;
 
 	float posX, posY, angle = 0f;
 
-	// Update is called once per frame
-	void Update () {
+    private void Start()
+    {
+        if (rotationCenter == null)
+            rotationCenter = transform;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		posX = rotationCenter.position.x + Mathf.Cos (angle) * rotationRadius;
 		posY = rotationCenter.position.y + Mathf.Sin (angle) * rotationRadius;
 		transform.position = new Vector2 (posX, posY);

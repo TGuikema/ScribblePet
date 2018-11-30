@@ -26,9 +26,7 @@ public class TextManager : MonoBehaviour {
 	public void SolveTextContinueButton()
     {
        
-       Debug.Log("reached");
-       
-       
+       //Debug.Log("reached");
 
         if (TextIndex >= TextList.Count)
         {

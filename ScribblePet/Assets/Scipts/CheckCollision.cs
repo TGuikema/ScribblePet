@@ -13,16 +13,17 @@ public class CheckCollision : MonoBehaviour {
     public float DebugSpeed = 10;
 
 	void Update () {
-        if (Input.GetKey(KeyCode.Space))
+        /*if (Input.GetKey(KeyCode.Space))
             transform.Translate(-DebugSpeed, 0, 0);
 
         if(Input.touchCount > 0)
         {
             transform.Translate(-DebugSpeed, 0, 0);
         }
+        */
 	}
 
-    bool isTriggered = false;
+    private bool isTriggered = false;
 
     /*public void OnCollisionEnter2D(Collision2D other)
     {
