@@ -21,6 +21,7 @@ public class CheckCollision : MonoBehaviour {
             transform.Translate(-DebugSpeed, 0, 0);
         }
         */
+        
 	}
 
     private bool isTriggered = false;

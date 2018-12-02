@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224141326636186858}
   - component: {fileID: 114453775725439668}
+  - component: {fileID: 114532931007821674}
   m_Layer: 5
   m_Name: RotationTarget
   m_TagString: Untagged
@@ -38,9 +39,8 @@ GameObject:
   - component: {fileID: 222243748124058134}
   - component: {fileID: 114644427558467890}
   - component: {fileID: 61217867655366372}
-  - component: {fileID: 114647839126008178}
   - component: {fileID: 114266965312568634}
-  - component: {fileID: 114892994061824602}
+  - component: {fileID: 114446211983001454}
   m_Layer: 5
   m_Name: ImageTarget_Projection
   m_TagString: Untagged
@@ -89,6 +89,18 @@ MonoBehaviour:
   XRumble: 0
   YRumble: 0
   ZRumble: 0
+--- !u!114 &114446211983001454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1830290719274720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8513430e0d61494fab89fa6c08e5484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ARSpriteObject: {fileID: 0}
 --- !u!114 &114453775725439668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,8 +112,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9076be6ada28a3849a6ebf6aa1b152f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trf: {fileID: 0}
-  cam: {fileID: 20765622977692920, guid: 0d583bc7e3210704f8838ae7325ba220, type: 2}
+  cam: {fileID: 0}
+  exmActivate: {fileID: 0}
+  rotateAroundTarget: {fileID: 0}
+--- !u!114 &114532931007821674
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1249277117122336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87b7bee469fcae409bf450b4339909f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationCenter: {fileID: 0}
+  rotationRadius: 350
+  angularSpeed: 1
 --- !u!114 &114644427558467890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,32 +156,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114647839126008178
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1830290719274720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8513430e0d61494fab89fa6c08e5484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ARSpriteObject: {fileID: 0}
---- !u!114 &114892994061824602
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1830290719274720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87b7bee469fcae409bf450b4339909f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationCenter: {fileID: 224854386417458754}
-  rotationRadius: 2
-  angularSpeed: 2
 --- !u!222 &222243748124058134
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -178,7 +179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -600}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224854386417458754

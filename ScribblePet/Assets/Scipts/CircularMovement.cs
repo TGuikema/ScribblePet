@@ -20,9 +20,9 @@ public class CircularMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		posX = rotationCenter.position.x + Mathf.Cos (angle) * rotationRadius;
-		posY = rotationCenter.position.y + Mathf.Sin (angle) * rotationRadius;
-		transform.position = new Vector2 (posX, posY);
+		posX = rotationCenter.localPosition.x + Mathf.Cos (angle) * rotationRadius;
+		posY = rotationCenter.localPosition.y + Mathf.Sin (angle) * rotationRadius;
+		transform.localPosition = new Vector2 (posX, posY);
 		angle = angle + Time.deltaTime * angularSpeed;
 
 		if (angle >= 360f)

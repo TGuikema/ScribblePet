@@ -9,13 +9,12 @@ public class Food : MonoBehaviour {
 
     public void GetCollected()
     {
-        Debug.Log("GetCollected reached");
-        ARSpriteObject = GameObject.Find("SweetSprite_4");
+        //Debug.Log("GetCollected reached");
 
-        
+        //        ARSpriteObject = GameObject.Find("SweetSprite_4");
+        //       ARSpriteObject.SetActive(false);
 
-
-        ARSpriteObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
 }

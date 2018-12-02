@@ -11,6 +11,7 @@ public class ExampleActivation : MonoBehaviour, ITrackableEventHandler
     public GameObject myModelPrefab;
     public Transform Canvas;
     public Rumble Rumble;
+    public UIProjectionLocation UIProjectLoc;
 
     // Use this for initialization
     void Start()
@@ -27,9 +28,10 @@ public class ExampleActivation : MonoBehaviour, ITrackableEventHandler
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        /*if (Input.GetKeyDown(KeyCode.A))
             //OnDetected();
             OnTrackingFound();
+            */
     }
 
     public void OnTrackableStateChanged(
@@ -74,6 +76,9 @@ public class ExampleActivation : MonoBehaviour, ITrackableEventHandler
             if (instantiatedGo == null)
             {
                 instantiatedGo = Instantiate(myModelPrefab, Canvas);
+                UIProjectionLocation uip = instantiatedGo.GetComponent<UIProjectionLocation>();
+                if (uip != null)
+                    uip.rotateAroundTarget = transform;
                 Debug.Log("Check instantiation");
             }
             Debug.Log("Passed instantiation");
@@ -88,7 +93,7 @@ public class ExampleActivation : MonoBehaviour, ITrackableEventHandler
             Rumble = instantiatedGo.GetComponentInChildren<Rumble>();
 
             // Link to UIProjectionLocation script.
-
+            UIProjectLoc = instantiatedGo.GetComponent<UIProjectionLocation>();
 
             //USE THIS TO ESTABLISH THE LINK BACK BETWEEN FOOD (B) AND EXAMPLE ACTIVATION (A).
             Food food = instantiatedGo.GetComponentInChildren<Food>();
