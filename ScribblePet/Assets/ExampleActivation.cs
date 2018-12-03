@@ -13,6 +13,8 @@ public class ExampleActivation : MonoBehaviour, ITrackableEventHandler
     public Rumble Rumble;
     public UIProjectionLocation UIProjectLoc;
 
+    //public EncouragingMessage_Text EncourageMes =
+
     // Use this for initialization
     void Start()
     {
@@ -63,6 +65,7 @@ public class ExampleActivation : MonoBehaviour, ITrackableEventHandler
 
     Vector3 projectionPos;
     GameObject instantiatedGo;
+    public GameObject PopupObject;
 
     private void OnTrackingFound()
     {
@@ -95,10 +98,12 @@ public class ExampleActivation : MonoBehaviour, ITrackableEventHandler
             // Link to UIProjectionLocation script.
             UIProjectLoc = instantiatedGo.GetComponent<UIProjectionLocation>();
 
+            //GameObject EncourageMes = instantiatedGo.GetComponent
+
             //USE THIS TO ESTABLISH THE LINK BACK BETWEEN FOOD (B) AND EXAMPLE ACTIVATION (A).
             Food food = instantiatedGo.GetComponentInChildren<Food>();
             food.ARSpriteObject = gameObject;   //gameObject <-- note that its noted with a small "g", so it's a variable.
-            
+            food.Popup = PopupObject;
         }
     }
 

@@ -35,9 +35,11 @@ public class CheckCollision : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collision)
     {
         Food collidedFoodProjection = collision.gameObject.GetComponent<Food>();
-   
+
+        //FinalFood collidedFinalFoodProjection = collision.gameObject.GetComponent<FinalFood>();
 
         collidedFoodProjection.GetCollected();
+        //collidedFinalFoodProjection.GetCollected();
         Collision();
     }
 
